@@ -1,0 +1,13 @@
+# Entornos virtuales
+VirtualEducation/
+venv/
+env/
+
+# Archivos de Rasa y modelos
+models/
+.rasa/
+
+# Caché de Python
+__pycache__/
+*.pyc
+*.pyo

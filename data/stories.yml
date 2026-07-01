@@ -1,0 +1,53 @@
+version: "3.1"
+
+stories:
+  - story: flujo básico de consulta general
+    steps:
+      - intent: saludar
+      - action: utter_saludo
+      - action: utter_menu
+      - intent: preguntar_sobre_certificacion
+      - action: utter_sobre_certificacion
+      - intent: preguntar_detalles_examen
+      - action: utter_detalles_examen
+      - intent: agradecer
+      - action: utter_agradecimiento
+      - intent: despedirse
+      - action: utter_despedida
+
+  - story: consulta de temas y recursos de estudio
+    steps:
+      - intent: saludar
+      - action: utter_saludo
+      - action: utter_menu
+      - intent: preguntar_temas
+      - action: utter_temas
+      - intent: preguntar_recursos
+      - action: utter_recursos
+      - intent: agradecer
+      - action: utter_agradecimiento
+
+  - story: consulta de conceptos técnicos y servicios de AWS
+    steps:
+      - intent: saludar
+      - action: utter_saludo
+      - action: utter_menu
+      - intent: preguntar_amazon_bedrock
+      - action: utter_amazon_bedrock
+      - intent: preguntar_amazon_sagemaker
+      - action: utter_amazon_sagemaker
+      - intent: preguntar_responsible_ai
+      - action: utter_responsible_ai
+      - intent: preguntar_servicios_ai
+      - action: utter_servicios_ai
+      - intent: agradecer
+      - action: utter_agradecimiento
+      - intent: despedirse
+      - action: utter_despedida
+
+  - story: consultar requisitos directo
+    steps:
+      - intent: preguntar_requisitos
+      - action: utter_requisitos
+      - intent: agradecer
+      - action: utter_agradecimiento

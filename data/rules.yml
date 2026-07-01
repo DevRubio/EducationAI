@@ -1,0 +1,63 @@
+version: "3.1"
+
+rules:
+  - rule: regla para saludo y mostrar menú
+    steps:
+      - intent: saludar
+      - action: utter_saludo
+      - action: utter_menu
+
+  - rule: regla para despedida
+    steps:
+      - intent: despedirse
+      - action: utter_despedida
+
+  - rule: regla para agradecimiento
+    steps:
+      - intent: agradecer
+      - action: utter_agradecimiento
+
+  - rule: regla para preguntar sobre la certificación
+    steps:
+      - intent: preguntar_sobre_certificacion
+      - action: utter_sobre_certificacion
+
+  - rule: regla para preguntar requisitos
+    steps:
+      - intent: preguntar_requisitos
+      - action: utter_requisitos
+
+  - rule: regla para preguntar detalles del examen
+    steps:
+      - intent: preguntar_detalles_examen
+      - action: utter_detalles_examen
+
+  - rule: regla para preguntar temas del examen
+    steps:
+      - intent: preguntar_temas
+      - action: utter_temas
+
+  - rule: regla para preguntar recursos de estudio
+    steps:
+      - intent: preguntar_recursos
+      - action: utter_recursos
+
+  - rule: regla para preguntar sobre Amazon Bedrock
+    steps:
+      - intent: preguntar_amazon_bedrock
+      - action: utter_amazon_bedrock
+
+  - rule: regla para preguntar sobre Amazon SageMaker
+    steps:
+      - intent: preguntar_amazon_sagemaker
+      - action: utter_amazon_sagemaker
+
+  - rule: regla para preguntar sobre IA Responsable
+    steps:
+      - intent: preguntar_responsible_ai
+      - action: utter_responsible_ai
+
+  - rule: regla para preguntar sobre otros servicios AI
+    steps:
+      - intent: preguntar_servicios_ai
+      - action: utter_servicios_ai

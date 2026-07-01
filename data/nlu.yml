@@ -1,0 +1,134 @@
+version: "3.1"
+
+nlu:
+  - intent: saludar
+    examples: |
+      - hola
+      - ola
+      - buenos días
+      - buenas tardes
+      - buenas noches
+      - qué tal
+      - cómo estás
+      - hola asistente
+      - oye
+      - buenas
+
+  - intent: despedirse
+    examples: |
+      - adiós
+      - hasta luego
+      - nos vemos
+      - chau
+      - bye
+      - hasta pronto
+      - me retiro
+
+  - intent: agradecer
+    examples: |
+      - gracias
+      - muchas gracias
+      - te lo agradezco
+      - qué amable
+      - excelente, gracias
+      - perfecto gracias
+      - de mucha ayuda
+
+  - intent: preguntar_sobre_certificacion
+    examples: |
+      - ¿De qué se trata la certificación de IA de AWS?
+      - ¿Qué es la certificación AWS Certified AI Practitioner?
+      - Cuéntame sobre el examen de practicante de IA de AWS
+      - ¿Qué es AWS AI Practitioner?
+      - De qué trata la nueva certificación de AWS AI
+      - Información de la certificación de IA
+      - Háblame de la certificación AIF-C01
+      - Qué validez tiene el certificado de IA de AWS
+
+  - intent: preguntar_requisitos
+    examples: |
+      - ¿Cuáles son los requisitos para dar el examen de IA?
+      - ¿Quién puede tomar el AWS Certified AI Practitioner?
+      - ¿Necesito programar para el examen de IA de AWS?
+      - ¿Hay prerrequisitos para el AI Practitioner?
+      - ¿Es para principiantes el examen de IA de AWS?
+      - Requisitos para la certificación
+      - Tengo que ser desarrollador para dar este examen
+      - Nivel de dificultad del examen de IA
+
+  - intent: preguntar_detalles_examen
+    examples: |
+      - ¿Cuánto cuesta el examen de AWS AI?
+      - ¿Cuál es la duración del examen de IA?
+      - Costo del examen de AWS Certified AI Practitioner
+      - Cuántas preguntas vienen en el examen
+      - Formato del examen de IA de AWS
+      - Puntaje mínimo para aprobar
+      - Cuánto dura el examen
+      - Cuál es el precio de la certificación de IA
+
+  - intent: preguntar_temas
+    examples: |
+      - ¿Cuáles son los temas evaluados en el examen?
+      - ¿Qué dominios entran en el examen de IA de AWS?
+      - Temario del AWS Certified AI Practitioner
+      - Qué evalúa la certificación de IA
+      - Qué temas debo estudiar para el examen de IA
+      - Dominios del examen
+      - Cuál es la estructura del contenido del examen
+
+  - intent: preguntar_recursos
+    examples: |
+      - ¿Dónde puedo estudiar para el examen de AWS AI?
+      - Recursos oficiales para preparar AWS Certified AI Practitioner
+      - Cursos recomendados para la certificación de IA
+      - Qué material de estudio me recomiendas
+      - Enlaces de preparación para AWS AI Practitioner
+      - Skill Builder AWS IA Practitioner
+      - Dónde encuentro exámenes de práctica
+      - Guía de estudio oficial de AWS AI
+
+  - intent: preguntar_amazon_bedrock
+    examples: |
+      - ¿Qué es Amazon Bedrock?
+      - Cómo funciona Bedrock
+      - Para qué sirve Bedrock de AWS
+      - Qué modelos fundacionales tiene Amazon Bedrock
+      - Explícame sobre Bedrock
+      - Qué es bedrock
+      - Qué puedo hacer con Bedrock
+      - Modelos en Bedrock
+
+  - intent: preguntar_amazon_sagemaker
+    examples: |
+      - ¿Qué es Amazon SageMaker?
+      - Para qué se usa SageMaker
+      - Qué es SageMaker Canvas
+      - Qué es SageMaker JumpStart
+      - Diferencia entre Bedrock y SageMaker
+      - Explícame sobre SageMaker
+      - Cuándo usar SageMaker
+      - SageMaker Pipelines
+
+  - intent: preguntar_responsible_ai
+    examples: |
+      - ¿Qué es la IA responsable en AWS?
+      - Principios de IA responsable
+      - Qué es Guardrails for Amazon Bedrock
+      - Cómo se detecta el sesgo en AWS
+      - Inteligencia artificial responsable
+      - Herramientas de IA responsable de AWS
+      - Qué es SageMaker Clarify
+      - Seguridad e IA responsable
+
+  - intent: preguntar_servicios_ai
+    examples: |
+      - ¿Qué servicios de IA preentrenados tiene AWS?
+      - Qué es Amazon Rekognition
+      - Para qué sirve Amazon Comprehend
+      - Qué es Amazon Polly y Transcribe
+      - Qué hace Amazon Textract
+      - Qué es Amazon Q
+      - Servicios de inteligencia artificial de AWS
+      - Amazon Lex para qué sirve
+      - Cuáles son los servicios de IA listos para usar en AWS

@@ -1,0 +1,68 @@
+version: "3.1"
+
+intents:
+  - saludar
+  - despedirse
+  - agradecer
+  - preguntar_sobre_certificacion
+  - preguntar_requisitos
+  - preguntar_detalles_examen
+  - preguntar_temas
+  - preguntar_recursos
+  - preguntar_amazon_bedrock
+  - preguntar_amazon_sagemaker
+  - preguntar_responsible_ai
+  - preguntar_servicios_ai
+
+responses:
+  utter_saludo:
+    - text: "¡Hola! Soy tu asistente de estudio para la certificación de AWS AI. ¿En qué puedo ayudarte hoy?"
+
+  utter_despedida:
+    - text: "¡Hasta luego! Te deseo el mayor de los éxitos en tu preparación para la certificación de AWS AI."
+
+  utter_agradecimiento:
+    - text: "¡Con gusto! Si tienes más preguntas sobre AWS AI o el examen, no dudes en consultarme."
+
+  utter_menu:
+    - text: "¿Qué te gustaría saber sobre la certificación AWS Certified AI Practitioner?"
+      buttons:
+        - title: "1. ¿Qué es esta certificación?"
+          payload: "/preguntar_sobre_certificacion"
+        - title: "2. Detalles del Examen (Costo/Tiempo)"
+          payload: "/preguntar_detalles_examen"
+        - title: "3. Temas y Dominios"
+          payload: "/preguntar_temas"
+        - title: "4. Recursos de Estudio"
+          payload: "/preguntar_recursos"
+
+  utter_sobre_certificacion:
+    - text: "La certificación **AWS Certified AI Practitioner (AIF-C01)** es una credencial de nivel básico (Foundational). Está diseñada para validar tu entendimiento general de conceptos de Inteligencia Artificial (IA), Machine Learning (ML) e IA Generativa (GenAI), así como los casos de uso y servicios correspondientes en AWS."
+
+  utter_requisitos:
+    - text: "No se requieren conocimientos técnicos profundos de programación para este examen. Está recomendada tanto para personas en roles técnicos como no técnicos (negocios, marketing, ventas, gerencia de proyectos) que deseen demostrar solvencia en IA en la nube de AWS."
+
+  utter_detalles_examen:
+    - text: "Aquí tienes los detalles clave del examen:\n- **Duración**: 120 minutos.\n- **Costo**: $100 USD (más impuestos locales).\n- **Número de preguntas**: 85 (opción múltiple y respuesta múltiple).\n- **Forma de entrega**: Centro de evaluación Pearson VUE u opción de examen supervisado en línea.\n- **Puntuación de aprobación**: 700 puntos de un rango de 100-1000."
+
+  utter_temas:
+    - text: "El examen evalúa 5 dominios principales:\n1. **Introducción a IA, ML y GenAI** (conceptos de redes neuronales, LLMs, fine-tuning, RAG, prompt engineering).\n2. **Amazon Bedrock y servicios de aplicación de IA de AWS** (modelos fundacionales, playgrounds, agentes).\n3. **Amazon SageMaker** (SageMaker Canvas, JumpStart, pipelines de datos).\n4. **IA Responsable** (sesgo, toxicidad, explicabilidad, privacidad y herramientas como Guardrails).\n5. **Seguridad y Cumplimiento de IA en AWS** (encriptación, políticas de IAM, cumplimiento regulatorio)."
+
+  utter_recursos:
+    - text: "Para prepararte con éxito, te recomiendo:\n- **AWS Skill Builder**: El plan de aprendizaje oficial 'AWS Certified AI Practitioner Learning Plan' (es gratuito).\n- **Guía Oficial de Examen y Preguntas de Muestra**: Disponibles de forma gratuita en el portal oficial de certificación de AWS.\n- **AWS Bedrock y SageMaker Playgrounds**: Practicar con la consola de AWS es clave para familiarizarse con los servicios."
+
+  utter_amazon_bedrock:
+    - text: "**Amazon Bedrock** es un servicio completamente administrado de AWS que facilita la creación y escalamiento de aplicaciones de IA generativa utilizando modelos fundacionales (FMs) líderes (como Claude de Anthropic, Llama de Meta, Command de Cohere, AI21, y los modelos Amazon Titan) a través de una API unificada."
+
+  utter_amazon_sagemaker:
+    - text: "**Amazon SageMaker** es la plataforma emblemática de AWS para el ciclo de vida completo de Machine Learning. Permite preparar datos, construir, entrenar y desplegar modelos de ML. Para la certificación, es crucial conocer **SageMaker Canvas** (IA sin código) y **SageMaker JumpStart** (centro de modelos de código abierto y FMs)."
+
+  utter_responsible_ai:
+    - text: "La **IA Responsable** en AWS se enfoca en la equidad (reducción de sesgos), explicabilidad, robustez, privacidad, seguridad y transparencia. AWS ofrece herramientas específicas como **Guardrails for Amazon Bedrock** (para bloquear contenido inapropiado o datos sensibles PII) y **SageMaker Clarify** (para evaluar sesgos y explicabilidad de modelos)."
+
+  utter_servicios_ai:
+    - text: "AWS cuenta con múltiples servicios de IA preentrenados y listos para usar sin necesidad de programar modelos:\n- **Amazon Rekognition**: Análisis de imágenes y videos.\n- **Amazon Comprehend**: Procesamiento de lenguaje natural (NLP).\n- **Amazon Polly** y **Transcribe**: Conversión de texto a voz y voz a texto.\n- **Amazon Lex**: Construcción de chatbots conversacionales.\n- **Amazon Textract**: Extracción de texto y datos estructurados de documentos.\n- **Amazon Q**: El asistente de IA generativa para el trabajo y desarrollo en AWS."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
