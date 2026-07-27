@@ -2,7 +2,11 @@
 VirtualEducation/
 venv/
 env/
-
+.env
+results/
+.config
+.rasa
+.keras
 # Archivos de Rasa y modelos
 models/
 .rasa/
