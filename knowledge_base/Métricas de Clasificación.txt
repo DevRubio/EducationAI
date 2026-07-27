@@ -1,0 +1,38 @@
+Las métricas utilizadas para evaluar los modelos de inteligencia artificial y machine learning se dividen en varias categorías clave según la tarea específica que realiza el modelo:
+1. Métricas de Clasificación (para modelos que predicen categorías, como "spam" o "no spam")
+Exactitud (Accuracy): Mide el porcentaje de predicciones correctas (tanto positivas como negativas) sobre el total de casos
+. Sin embargo, no es una métrica útil si los datos de entrenamiento están muy desequilibrados
+.
+Precisión (Precision): Mide cuántos de los casos que el modelo identificó como positivos son realmente positivos. Es fundamental cuando los falsos positivos son muy costosos o problemáticos (por ejemplo, evitar marcar un correo importante como spam)
+.
+Exhaustividad o Sensibilidad (Recall / True Positive Rate): Como vimos anteriormente, mide la capacidad de encontrar todos los casos positivos reales, siendo ideal para escenarios donde minimizar los falsos negativos es vital (como en diagnósticos médicos)
+.
+Puntuación F1 (F1 Score): Es la media armónica entre la precisión y la exhaustividad. Es la métrica recomendada cuando se necesita encontrar un equilibrio entre ambas o cuando el conjunto de datos está desequilibrado
+.
+AUC-ROC (Área bajo la curva ROC): Mide el rendimiento general del modelo a través de todos los umbrales de clasificación posibles. Una puntuación de 1.0 indica una exactitud perfecta, mientras que 0.5 equivale a una predicción aleatoria
+.
+Especificidad (Specificity / True Negative Rate): Mide qué tan bien el modelo identifica correctamente los casos negativos
+.
+2. Métricas de Regresión (para modelos que predicen valores numéricos continuos, como precios)
+Error Cuadrático Medio (MSE): Calcula el promedio de los errores (diferencias entre el valor real y el pronosticado) elevados al cuadrado. Debido a esto, penaliza y enfatiza fuertemente los errores grandes o valores atípicos
+.
+Raíz del Error Cuadrático Medio (RMSE): Es la raíz cuadrada del MSE. Su gran ventaja es que expresa el error en las mismas unidades de la variable original que se está midiendo, haciéndolo más fácil de interpretar
+.
+Error Absoluto Medio (MAE): Promedia los valores absolutos de los errores. Es útil si se desea evaluar el modelo sin que los errores más grandes sesguen demasiado la métrica
+.
+3. Métricas de IA Generativa y LLMs (para evaluación de texto)
+Dado que los modelos de lenguaje grande (LLMs) generan salidas no deterministas y abiertas, sus métricas generalmente comparan el texto generado por la máquina contra un texto de referencia escrito por un humano
+:
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation): Se utiliza principalmente para evaluar tareas de resumen de texto, midiendo cuánta información del resumen humano de referencia fue capturada correctamente por el modelo
+.
+BLEU (Bilingual Evaluation Understudy): Está diseñada para evaluar la traducción automática, midiendo la coincidencia de secuencias exactas de palabras (n-gramas) entre la salida del modelo y la traducción de referencia
+.
+BERTScore: Evalúa la similitud semántica. En lugar de exigir que las palabras coincidan exactamente como lo hacen ROUGE o BLEU, utiliza incrustaciones (embeddings) para verificar si ambos textos comunican el mismo significado o contexto
+.
+Perplejidad (Perplexity): Mide qué tan bien el modelo predice la probabilidad estadística de la siguiente palabra o token en una secuencia. Una perplejidad más baja indica un mejor rendimiento
+.
+4. Métricas Empresariales (Business Metrics)
+El éxito de un modelo no solo debe medirse técnicamente, sino por su impacto y viabilidad para la organización.
+Estas métricas evalúan si la IA cumple su propósito de negocio e incluyen el retorno de la inversión (ROI), el costo por usuario, la tasa de conversión, la eficiencia (tiempo ahorrado), el ingreso promedio por usuario y el valor del ciclo de vida del cliente (CLTV)
+.
+¿Hay alguna de estas categorías, como las de IA Generativa (ROUGE, BLEU) o las de clasificación, en la que te gustaría profundizar para tus estudios del examen?

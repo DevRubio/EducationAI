@@ -132,3 +132,16 @@ nlu:
       - Servicios de inteligencia artificial de AWS
       - Amazon Lex para qué sirve
       - Cuáles son los servicios de IA listos para usar en AWS
+  - intent: ask_creador
+    examples: |
+      - ¿Quien te creo?
+      - ¿Quies es tu creador?
+      - ¿Quien te desarrollo?
+      - Dime tu creador
+
+  - intent: consultar_api
+    examples: |
+      - quiero ver informacion de la API
+      - consultame los datos externos
+      - dame informacion del servidor
+      - trae los datos de la api

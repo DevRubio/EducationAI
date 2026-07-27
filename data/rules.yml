@@ -61,3 +61,18 @@ rules:
     steps:
       - intent: preguntar_servicios_ai
       - action: utter_servicios_ai
+
+  - rule: Responder usando RAG si el intent no tiene alta confianza (NLU Fallback)
+    steps:
+      - intent: nlu_fallback
+      - action: action_responder_rag
+
+  - rule: regla para responde el creador
+    steps:
+      - intent: ask_creador
+      - action: utter_ask_creador
+
+  - rule: consultar API externa al consultar
+    steps:
+      - intent: consultar_api
+      - action: action_llamar_api

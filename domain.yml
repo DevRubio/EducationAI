@@ -13,6 +13,15 @@ intents:
   - preguntar_amazon_sagemaker
   - preguntar_responsible_ai
   - preguntar_servicios_ai
+  - ask_creador
+  - consultar_api
+
+slots:
+  intentos_email:
+    type: float
+    initial_value: 0
+    mappings:
+      - type: custom
 
 responses:
   utter_saludo:
@@ -63,6 +72,15 @@ responses:
   utter_servicios_ai:
     - text: "AWS cuenta con múltiples servicios de IA preentrenados y listos para usar sin necesidad de programar modelos:\n- **Amazon Rekognition**: Análisis de imágenes y videos.\n- **Amazon Comprehend**: Procesamiento de lenguaje natural (NLP).\n- **Amazon Polly** y **Transcribe**: Conversión de texto a voz y voz a texto.\n- **Amazon Lex**: Construcción de chatbots conversacionales.\n- **Amazon Textract**: Extracción de texto y datos estructurados de documentos.\n- **Amazon Q**: El asistente de IA generativa para el trabajo y desarrollo en AWS."
 
+  utter_ask_creador:
+    - text: "Fui creado por el ingeniero Oscar Rubio."
+  utter_default:
+    - text: "Lo siento, no he podido comprender tu pregunta. ¿Podrías intentar reformularla? Recuerda que respondo dudas específicas sobre la certificación de AWS AI."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+actions:
+  - action_responder_rag
+  - action_llamar_api

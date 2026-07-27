@@ -1,0 +1,1 @@
+Se encarga específicamente de revisar los datos y el modelo, mostrando dónde se encuentran los sesgos y sugiriendo correcciones
