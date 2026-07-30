@@ -15,6 +15,7 @@ intents:
   - preguntar_servicios_ai
   - ask_creador
   - consultar_api
+  - finalizar_quiz
 
 slots:
   intentos_email:
@@ -22,6 +23,16 @@ slots:
     initial_value: 0
     mappings:
       - type: custom
+
+  email_usuario:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        not_intent: finalizar_quiz
+        conditions:
+          - active_loop: pedir_email_form
+            requested_slot: email_usuario
 
 responses:
   utter_saludo:
@@ -74,8 +85,17 @@ responses:
 
   utter_ask_creador:
     - text: "Fui creado por el ingeniero Oscar Rubio."
-  utter_default:
-    - text: "Lo siento, no he podido comprender tu pregunta. ¿Podrías intentar reformularla? Recuerda que respondo dudas específicas sobre la certificación de AWS AI."
+ 
+  utter_ask_email_results:
+    - text: "¡Quiz terminado! ¿A qué correo electrónico te envío tu puntaje y la guía de estudio de Amazon Bedrock?"
+  utter_ask_email_results_second:
+    - text: "No logré capturar tu correo correctamente. ¿Podrías escribirlo de nuevo, por favor?"
+  utter_ask_email_results_format:
+    - text: "Sigo sin poder registrarlo. Asegúrate de escribir solo tu dirección de correo completa (ejemplo: usuario@dominio.com)."
+  utter_cancel_email_request:
+    - text: "Parece que estamos teniendo problemas con el correo. No te preocupes, te mostraré tus resultados y recomendaciones aquí mismo en el chat."
+  utter_confirmar_correo:
+    - text: "¡Perfecto! He guardado tu correo exitosamente."
 
 session_config:
   session_expiration_time: 60
@@ -84,3 +104,10 @@ session_config:
 actions:
   - action_responder_rag
   - action_llamar_api
+  - validate_pedir_email_form
+  - action_ask_email_usuario
+
+forms:
+  pedir_email_form:
+    required_slots:
+      - email_usuario

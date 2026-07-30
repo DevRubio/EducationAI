@@ -1,0 +1,165 @@
+version: "3.1"
+
+stories:
+  - story: Test - Falla de correo 3 veces y cancelacion automatica
+    steps:
+    # Inicio Flujo
+    - user: |
+        finalizar prueba
+      intent: finalizar_quiz
+      
+    # Activacion del formulario
+    - action: pedir_email_form 
+    - active_loop: pedir_email_form
+    - slot_was_set:
+      - requested_slot: email_usuario
+
+    # Intento 1
+    - user: |
+        correo malo
+      intent: nlu_fallback
+    - action: pedir_email_form
+    - slot_was_set:
+      - intentos_email: 1
+      - requested_slot: email_usuario
+
+    # Intento 2
+    - user: |
+        no me lo se
+      intent: nlu_fallback
+    - action: pedir_email_form
+    - slot_was_set:
+      - intentos_email: 2 
+      - requested_slot: email_usuario
+
+    # Intento 3 (Fallo definitivo)
+    - user: |
+        correo.correo
+      intent: nlu_fallback
+    - action: pedir_email_form
+
+    # Cancelar formulario
+    - slot_was_set:
+      - email_usuario: cancelado_por_intentos
+      - intentos_email: 0
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: utter_confirmar_correo 
+
+  - story: Test - correo correcto en el primer intento
+    steps: 
+      # 1. Usuario inicia el flujo
+      - user: |
+          finalizar prueba
+        intent: finalizar_quiz
+
+      # 2. Bot enciende el formulario y envia la pregunta inicial
+      - action: pedir_email_form
+      - active_loop: pedir_email_form
+      - slot_was_set:
+        - requested_slot: email_usuario
+
+      # 3. Usuario responde
+      - user: |
+          correo@correo.com
+        intent: nlu_fallback
+
+      # 4. El formulario atrapa el texto 
+      - action: pedir_email_form
+      - slot_was_set:
+        - email_usuario: correo@correo.com
+        - intentos_email: 0
+        - requested_slot: null
+
+      # 5. Cierre
+      - active_loop: null
+      - action: utter_confirmar_correo
+
+  - story: Test - Correo correcto en el segundo intento
+    steps:
+      #Inicio flujo
+      - user: |
+          finalizar prueba
+        intent: finalizar_quiz
+
+      #Inicio bot
+      - action: pedir_email_form
+      - active_loop: pedir_email_form
+      - slot_was_set: 
+          - requested_slot: email_usuario
+
+      # Usuario responde primer intento
+      - user: |
+          no me lo se
+        intent: nlu_fallback
+
+      #bot responde
+      - action: pedir_email_form
+      - slot_was_set: 
+          - intentos_email: 1
+          - requested_slot: email_usuario
+
+      # usuario responde segundo intento
+      - user: |
+          correo@correo.com
+        intent: nlu_fallback
+      #Bot responde
+      - action: pedir_email_form
+      - slot_was_set:
+        - email_usuario: correo@correo.com
+        - intentos_email: 0
+        - requested_slot: null
+
+      #Cierre conversacion
+      - active_loop: null
+      - action: utter_confirmar_correo
+
+  - story: Test - Correo correcto en el tercer intento
+    steps:
+      #Inicio flujo
+      - user: |
+          finalizar prueba
+        intent: finalizar_quiz
+      # Bot enciende el formulario
+      - action: pedir_email_form
+      - active_loop: pedir_email_form
+      - slot_was_set:
+        - requested_slot: email_usuario
+
+      # usuario responde intento 1
+      - user: |
+          no me lo se
+        intent: nlu_fallback
+
+      # el bot atrapa la respuesta
+      - action: pedir_email_form
+      - slot_was_set:
+        - intentos_email: 1
+        - requested_slot: email_usuario
+
+      # usuario responde intento 2
+      - user: |
+          no me lo se
+        intent: nlu_fallback
+      # Bot atrapa respues
+      - action: pedir_email_form
+      - slot_was_set:
+        - intentos_email: 2
+        - requested_slot: email_usuario
+
+      # usuario responde el intento 3
+      - user: |
+          correo@correo.com
+        intent: nlu_fallback
+
+      # bot atrapa la respuesta
+      - action: pedir_email_form
+      - slot_was_set:
+        - intentos_email: 0
+        - email_usuario: correo@correo.com
+        - requested_slot: null
+
+      # cierre conversacion
+      - active_loop: null
+      - action: utter_confirmar_correo

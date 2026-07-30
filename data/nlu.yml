@@ -145,3 +145,10 @@ nlu:
       - consultame los datos externos
       - dame informacion del servidor
       - trae los datos de la api
+
+  - intent: finalizar_quiz
+    examples: |
+      - ya terminé el quiz
+      - finalizar prueba
+      - quiero ver mis resultados
+      - terminar examen

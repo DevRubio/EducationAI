@@ -76,3 +76,20 @@ rules:
     steps:
       - intent: consultar_api
       - action: action_llamar_api
+
+  - rule: Activar formulario de correo 
+    steps:
+      - intent: finalizar_quiz
+      - action: pedir_email_form
+      - active_loop: pedir_email_form
+
+  - rule: Enviar correo al completar formulario
+    condition: 
+      - active_loop: pedir_email_form
+    steps:
+      - action: pedir_email_form
+      - active_loop: null
+      - slot_was_set:
+        - requested_slot: null
+      - action: utter_confirmar_correo
+
