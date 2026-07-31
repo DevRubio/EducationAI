@@ -16,6 +16,7 @@ intents:
   - ask_creador
   - consultar_api
   - finalizar_quiz
+  - diferencias_AmazonCloudWatch_AWSCloudTrail
 
 slots:
   intentos_email:
@@ -96,6 +97,21 @@ responses:
     - text: "Parece que estamos teniendo problemas con el correo. No te preocupes, te mostraré tus resultados y recomendaciones aquí mismo en el chat."
   utter_confirmar_correo:
     - text: "¡Perfecto! He guardado tu correo exitosamente."
+
+  utter_diferencias_AmazonCloudWatch_AWSCloudTrail:
+    - text: |
+        La diferencia principal radica en su propósito: AWS CloudTrail es una herramienta de auditoría (registra quién hizo qué), mientras que Amazon CloudWatch es una herramienta de monitoreo y observabilidad (registra cómo está funcionando el sistema).
+        Aquí tienes el detalle de cada uno y cuándo utilizarlos:
+        AWS CloudTrail (Auditoría y Trazabilidad)
+        Qué es: Un servicio que captura y registra absolutamente todas las llamadas a la API y acciones de los usuarios realizadas dentro de tu cuenta de AWS.
+        Para qué sirve: Es tu bitácora o log de auditoría completo. Te permite rastrear la identidad del usuario, determinando exactamente quién hizo una solicitud, qué acción realizó, cuándo la hizo y desde qué dirección IP.
+        Cuándo utilizarlo: Debes usarlo cuando los requisitos de tu negocio exijan auditoría de seguridad y cumplimiento normativo (compliance).
+        Ejemplo en Inteligencia Artificial: Úsalo si necesitas saber de forma auditable quién invocó un modelo específico de Amazon Bedrock, qué usuario modificó una configuración en Amazon SageMaker, o quién accedió a los datos de entrenamiento. Si el examen te pregunta por un servicio para registrar todas las acciones o aplicaciones en una cuenta, la respuesta es CloudTrail.
+        Amazon CloudWatch (Monitoreo y Rendimiento)
+        Qué es: Es la herramienta central de monitoreo y observabilidad de AWS.
+        Para qué sirve: Recopila métricas operativas y archivos de registro de estado del sistema para vigilar su rendimiento en tiempo real, permitiéndote además configurar alarmas y automatizar respuestas cuando se alcanzan ciertos umbrales.
+        Cuándo utilizarlo: Debes usarlo para saber en todo momento qué está haciendo tu sistema, cómo están respondiendo los recursos y si existen anomalías operativas.
+        Ejemplo en Inteligencia Artificial: Úsalo en conjunto con SageMaker Model Monitor para vigilar la calidad de tus modelos en producción. Si CloudWatch detecta que el rendimiento del modelo se degrada (model drift), puede enviar una notificación automatizada o lanzar procesos para que el modelo se vuelva a entrenar.
 
 session_config:
   session_expiration_time: 60

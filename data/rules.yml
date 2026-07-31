@@ -93,3 +93,8 @@ rules:
         - requested_slot: null
       - action: utter_confirmar_correo
 
+  - rule: Regla para responder diferencias entre AmazonCloudWatch y AWSCloudTrail
+    steps:
+      - intent: diferencias_AmazonCloudWatch_AWSCloudTrail
+      - action: utter_diferencias_AmazonCloudWatch_AWSCloudTrail
+

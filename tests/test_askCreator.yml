@@ -1,7 +1,0 @@
-stories:
-  - story: Prueba sobre la pregunta del creador
-    steps: 
-      - user: |
-          quien te creo
-        intent: ask_creador
-      - action: utter_ask_creador

@@ -152,3 +152,9 @@ nlu:
       - finalizar prueba
       - quiero ver mis resultados
       - terminar examen
+
+  - intent: diferencias_AmazonCloudWatch_AWSCloudTrail
+    examples: | 
+      - Cual es la diferencia entre Amazon CloudWatch y AWS CloudTrail
+      - que es Amazon CloudWatch y AWS CloudTrail
+      - Amazon CloudWatch y AWS CloudTrail
